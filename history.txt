@@ -1,0 +1,28 @@
+AVDM 2.1 (08 Agust 2012)
+- Added DMG and HFS format support
+- New <-list> command with detailed output
+- Improved driver loading mechanism
+- Enhanced file path handling
+- Better system resource management
+
+AVDM 2.0 (22 June 2012)
+- Added CCD/IMG/SUB format support
+- New -remove command for ejecting drives
+- Improved installation process
+- Enhanced driver compatibility
+- Better error handling system
+
+AVDM 1.1 (17 May 2012)
+- Added NRG and MDF/MDS format support
+- Improved command-line interface
+- Enhanced driver stability
+- Better Windows 7 compatibility
+- Fixed memory leak issues
+
+AVDM 1.0 (12 April 2012)
+- Initial release version
+- Basic ISO, BIN/CUE, IMG support
+- add command for mounting images
+- install and -uninstall commands
+- Windows XP/Vista/7 support
+- 32-bit driver implementation

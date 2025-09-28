@@ -1,0 +1,305 @@
+<HTML>
+<HEAD>
+<TITLE>AVDM Help File</TITLE>
+</HEAD>
+<BODY>
+
+<H1>AVDM DOCUMENTATION FILE</H1>
+<H2>AriVirtual Drive Manager - Complete User Documentation</H2>
+
+<HR>
+
+<H3>TABLE OF CONTENTS</H3>
+<UL>
+<LI><A HREF="#section1">1. Introduction to AVDM</A></LI>
+<LI><A HREF="#section2">2. System Requirements</A></LI>
+<LI><A HREF="#section3">3. Installation Procedure</A></LI>
+<LI><A HREF="#section4">4. Command Reference</A></LI>
+<LI><A HREF="#section5">5. Usage Examples</A></LI>
+<LI><A HREF="#section6">6. Supported Formats</A></LI>
+<LI><A HREF="#section7">7. Troubleshooting Guide</A></LI>
+<LI><A HREF="#section8">8. Frequently Asked Questions</A></LI>
+</UL>
+
+<HR>
+
+<H3><A NAME="section1">1. INTRODUCTION TO AVDM</A></H3>
+
+<P>AVDM (AriVirtual Drive Manager) is a command-line utility for creating virtual CD/DVD drives and mounting disk image files in Windows.</P>
+
+<P>Key Features:</P>
+<UL>
+<LI>Support for 20+ disk image formats</LI>
+<LI>Command-line interface for automation</LI>
+<LI>Password protection for encrypted images</LI>
+<LI>Multiple virtual drives simultaneously</LI>
+<LI>Low system resource usage</LI>
+</UL>
+
+<HR>
+
+<H3><A NAME="section2">2. SYSTEM REQUIREMENTS</A></H3>
+
+<P>Minimum Requirements:</P>
+<UL>
+<LI>Microsoft Windows Operating Systems</LI>
+<LI>512 MB RAM</LI>
+<LI>1 MB free disk space</LI>
+<LI>Administrator rights for installation</LI>
+</UL>
+
+<P>Recommended Specifications:</P>
+<UL>
+<LI>2 GB RAM</LI>
+<LI>100 MB free disk space</LI>
+</UL>
+
+<HR>
+
+<H3><A NAME="section3">3. INSTALLATION PROCEDURE</A></H3>
+
+<P>Step 1: Open Command Prompt as Administrator</P>
+<PRE>Win + R -> cmd -> Ctrl + Shift + Enter</PRE>
+
+<P>Step 2: Install Driver</P>
+<PRE>avdm -install</PRE>
+
+<P>Step 3: Restart Computer</P>
+<PRE>shutdown /r /t 0</PRE>
+
+<P>Step 4: Verify Installation</P>
+<PRE>avdm -list</PRE>
+
+<HR>
+
+<H3><A NAME="section4">4. COMMAND REFERENCE</A></H3>
+
+<P>Basic Command Syntax:</P>
+<PRE>avdm [command] [parameters]</PRE>
+
+<P>Available Commands:</P>
+
+<P>Install Driver:</P>
+<PRE>avdm -install</PRE>
+<P>Installs virtual drive driver (Admin required)</P>
+
+<P>Uninstall Driver:</P>
+<PRE>avdm -uninstall</PRE>
+<P>Removes virtual drive driver (Admin required)</P>
+
+<P>Mount Image File:</P>
+<PRE>avdm -add [drive:] "[image file]" [password]</PRE>
+<P>Mounts image to virtual drive</P>
+
+<P>Eject Virtual Drive:</P>
+<PRE>avdm -remove [drive:]</PRE>
+<P>Ejects image from virtual drive</P>
+
+<P>List Active Drives:</P>
+<PRE>avdm -list</PRE>
+<P>Shows currently mounted virtual drives</P>
+
+<P>Set Drive Quantity:</P>
+<PRE>avdm -setnum [number]</PRE>
+<P>Configures number of virtual drives (Admin required)</P>
+
+<P>Change Drive Letter:</P>
+<PRE>avdm -changedrive [device] [new drive:]</PRE>
+<P>Changes drive letter assignment</P>
+
+<P>Show Supported Formats:</P>
+<PRE>avdm -formats</PRE>
+<P>Displays all supported file formats</P>
+
+<P>Display Help:</P>
+<PRE>avdm -help</PRE>
+<P>Shows help information</P>
+
+<P>Open Documentation:</P>
+<PRE>avdm -docs</PRE>
+<P>Opens this documentation file</P>
+
+<HR>
+
+<H3><A NAME="section5">5. USAGE EXAMPLES</A></H3>
+
+<P>Mount ISO file to drive G:</P>
+<PRE>avdm -add G: "C:\Games\game.iso"</PRE>
+
+<P>Mount encrypted ISZ file with password:</P>
+<PRE>avdm -add H: "D:\Backup\data.isz" mypassword123</PRE>
+
+<P>Mount from network location:</P>
+<PRE>avdm -add I: "\\SERVER\share\image.nrg"</PRE>
+
+<P>Eject virtual drive:</P>
+<PRE>avdm -remove G:</PRE>
+
+<P>List active drives:</P>
+<PRE>avdm -list</PRE>
+
+<P>Set up 4 virtual drives:</P>
+<PRE>avdm -setnum 4</PRE>
+
+<P>Change drive letter:</P>
+<PRE>avdm -changedrive 0 M:</PRE>
+
+<P>Batch file example:</P>
+<PRE>@echo off
+echo Loading virtual drives...
+avdm -add G: "C:\UTILS\CD1.iso"
+avdm -add H: "C:\UTILS\CD2.iso"
+echo Virtual drives ready!
+pause</PRE>
+
+<HR>
+
+<H3><A NAME="section6">6. SUPPORTED FORMATS</A></H3>
+
+<P>Standard Formats:</P>
+<UL>
+<LI>ISO (ISO 9660/CD-ROM)</LI>
+<LI>BIN/CUE (CDRWin)</LI>
+<LI>IMG/IMA (Disk Images)</LI>
+</UL>
+
+<P>Burning Software Formats:</P>
+<UL>
+<LI>NRG (Nero Burning ROM)</LI>
+<LI>MDF/MDS (Alcohol 120%)</LI>
+<LI>CCD/IMG/SUB (CloneCD)</LI>
+<LI>BWT/BWI (BlindWrite)</LI>
+<LI>B5T/B5I, B6T/B6I</LI>
+</UL>
+
+<P>Compressed/Encrypted Formats:</P>
+<UL>
+<LI>ISZ (Compressed ISO with AES encryption)</LI>
+<LI>DAA (PowerISO)</LI>
+<LI>UIF (MagicISO)</LI>
+</UL>
+
+<P>Other Formats:</P>
+<UL>
+<LI>DMG (Apple Disk Image)</LI>
+<LI>HFS (Macintosh)</LI>
+<LI>C2D, VC4/000, LCD, PXI, GI</LI>
+</UL>
+
+<HR>
+
+<H3><A NAME="section7">7. TROUBLESHOOTING GUIDE</A></H3>
+
+<P>Problem: "Driver not installed" error</P>
+<UL>
+<LI>Run Command Prompt as Administrator</LI>
+<LI>Execute: avdm -install</LI>
+<LI>Restart computer</LI>
+</UL>
+
+<P>Problem: "Access denied" when mounting</P>
+<UL>
+<LI>Check if file is not in use by another program</LI>
+<LI>Verify file path is correct</LI>
+<LI>Ensure drive letter is available</LI>
+</UL>
+
+<P>Problem: Virtual drive not appearing in Windows Explorer</P>
+<UL>
+<LI>Run: avdm -list to verify drive status</LI>
+<LI>Check Device Manager for driver issues</LI>
+<LI>Reinstall driver if necessary</LI>
+</UL>
+
+<P>Problem: "Unsupported format" error</P>
+<UL>
+<LI>Verify file integrity</LI>
+<LI>Check if format is supported using avdm -formats</LI>
+<LI>Try alternative image extraction method</LI>
+</UL>
+
+<P>Problem: "File not found" error</P>
+<UL>
+<LI>Use full path to image file</LI>
+<LI>Enclose path in quotes if it contains spaces</LI>
+<LI>Check file permissions</LI>
+</UL>
+
+<HR>
+
+<H3><A NAME="section8">8. FREQUENTLY ASKED QUESTIONS</A></H3>
+
+<P>Q: How many virtual drives can I create?<BR>
+A: Up to 24 drives, depending on available drive letters and system resources.</P>
+
+<P>Q: Can I use AVDM on Windows Server?<BR>
+A: Yes, AVDM works on Windows Server editions.</P>
+
+<P>Q: Are there any limitations on file size?<BR>
+A: No specific limitations, but very large files may require sufficient RAM and disk space.</P>
+
+<P>Q: Can I mount images from network shares?<BR>
+A: Yes, use UNC paths like \\server\share\file.iso</P>
+
+<P>Q: Is AVDM compatible with antivirus software?<BR>
+A: Generally yes, but some antivirus may require exclusions for the AVDM directory.</P>
+
+<P>Q: How do I update AVDM?<BR>
+A: Uninstall current version and install the new version.</P>
+
+<HR>
+
+<H3>COMMAND OUTPUT EXAMPLES</H3>
+
+<P>avdm -list output:</P>
+<PRE>--- Virtual Drive Overview ---
+Driver Engine   : AVDM Virtual Engine
+Active Devices  : 2
+Assigned Letters: [G,H]
+--------------------------------</PRE>
+
+<P>avdm -formats output:</P>
+<PRE>Supported Virtual Image Formats
+
+ • Standard Formats:
+    ISO, BIN/CUE, IMG, IMA
+
+ • Popular Burning Software Formats:
+    NRG (Nero), MDF/MDS (Alcohol), CCD/IMG/SUB (CloneCD)</PRE>
+
+<HR>
+
+<H3>ERROR CODES AND MESSAGES</H3>
+
+<P>"This command must be run as Administrator!"<BR>
+Solution: Run Command Prompt as Administrator.</P>
+
+<P>"AVDM driver is not installed"<BR>
+Solution: Install driver using avdm -install.</P>
+
+<P>"Operation completed successfully"<BR>
+Indicates command executed without errors.</P>
+
+<P>"No virtual drives currently mounted"<BR>
+Normal message when no drives are active.</P>
+
+<HR>
+
+<H3>CONTACT INFORMATION</H3>
+
+<P>For technical support and additional resources:</P>
+<UL>
+<LI>Documentation: Included with installation</LI>
+<LI>Support: <a href="mailto:users.ariproject@gmail.com">users.ariproject@gmail.com</a></LI>
+</UL>
+
+<P>AVDM (AriVirtual Drive Manager)<BR>
+Copyright (c) 2012 Ari Project<BR>
+All Rights Reserved.</P>
+
+<HR>
+
+<P>Documentation last updated: August 2012</P>
+
+</BODY>
+</HTML>

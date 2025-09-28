@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<title>AVDM (AriVirtual Drive Manager) is a command-line utility for creating virtual CD/DVD drives and mounting disk image files in Windows.</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#024AC9">
+
+<center>
+
+<font face="verdana, arial" size=1 color="#000000">
+    <A HREF="help.htm" >User Documentation</A> |
+    <A HREF="license.txt">License</A>
+</font>
+
+<table border="0" width="600">
+	<tr><td valign="top">
+		<P><hr size=1 width=600>
+		<img src="logo.png">
+		<BR>
+		<hr size=1 width=600>
+			
+<font face="verdana, arial" size=1 color="#000000">|
+    <A HREF="AVDM_Setup.zip">Download AVDM ZIP</A> |
+    <A HREF="AVDM_Setup.exe">Download AVDM EXE</A> |
+	<A HREF="history.txt">Version History</A> |
+</font>
+
+		<p><B>AVDM</B> (AriVirtual Drive Manager) is a command-line utility for creating virtual CD/DVD drives and mounting disk image files in Windows.</p>
+		<P><B>Key Features:</B></P>
+<UL>
+<LI>Support for 20+ disk image formats</LI>
+<LI>Command-line interface for automation</LI>
+<LI>Password protection for encrypted images</LI>
+<LI>Multiple virtual drives simultaneously</LI>
+<LI>Low system resource usage</LI>
+</UL>
+<P><B>Minimum Requirements:</B></P>
+<UL>
+<LI>Microsoft Windows Operating Systems</LI>
+<LI>512 MB RAM</LI>
+<LI>1 MB free disk space</LI>
+<LI>Administrator rights for installation</LI>
+</UL>
+<P><B>Recommended Specifications:</B></P>
+<UL>
+<LI>500MB RAM</LI>
+<LI>100 MB free disk space</LI>
+</UL>
+<H3>COMMAND REFERENCE</H3>
+
+<P>Basic Command Syntax:</P>
+<PRE>avdm [command] [parameters]</PRE>
+
+<P>Available Commands:</P>
+
+<P>Install Driver:</P>
+<PRE>avdm -install</PRE>
+<P>Installs virtual drive driver (Admin required)</P>
+
+<P>Uninstall Driver:</P>
+<PRE>avdm -uninstall</PRE>
+<P>Removes virtual drive driver (Admin required)</P>
+
+<P>Mount Image File:</P>
+<PRE>avdm -add [drive:] "[image file]" [password]</PRE>
+<P>Mounts image to virtual drive</P>
+
+<P>Eject Virtual Drive:</P>
+<PRE>avdm -remove [drive:]</PRE>
+<P>Ejects image from virtual drive</P>
+
+<P>List Active Drives:</P>
+<PRE>avdm -list</PRE>
+<P>Shows currently mounted virtual drives</P>
+
+<P>Set Drive Quantity:</P>
+<PRE>avdm -setnum [number]</PRE>
+<P>Configures number of virtual drives (Admin required)</P>
+
+<P>Change Drive Letter:</P>
+<PRE>avdm -changedrive [device] [new drive:]</PRE>
+<P>Changes drive letter assignment</P>
+
+<P>Show Supported Formats:</P>
+<PRE>avdm -formats</PRE>
+<P>Displays all supported file formats</P>
+
+<P>Display Help:</P>
+<PRE>avdm -help</PRE>
+<P>Shows help information</P>
+
+<P>Open Documentation:</P>
+<PRE>avdm -docs</PRE>
+<P>Opens documentation</P>
+<hr size=1 width=600>
+<FONT SIZE=2>Copyright (c) 2012 <A HREF="/">Ari Project</A>. All Rights Reserved.</FONT>
+	</td></tr>
+
+</table>
+</center>
+</body>
+</html>
